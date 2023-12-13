@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.39">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>803</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
-      <StartupTime>1702379811</StartupTime>
+      <StartupTime>1702452450</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1400,15 +1400,18 @@ false posixrules
 13209||10|C|G
 13209||-9223372036854775808|U|G
 13209||10|U|G</Grants>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>803</IntrospectionStateNumber>
       <ObjectId>16388</ObjectId>
       <Relations>sequence|table|24580|24581|1
+sequence|table|24693|24694|1
 sequence|table|24589|24590|1
+sequence|table|24675|24676|1
 sequence|table|24599|24600|1
 sequence|table|24608|24609|1
 sequence|table|24622|24623|1
 sequence|table|24631|24632|1
 sequence|table|24654|24655|1
+sequence|table|24715|24716|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4831,96 +4834,173 @@ sequence|table|24654|24655|1
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>803</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="263" parent="262" name="company_company_id_seq">
+    <object-type id="263" parent="262" name="gender">
+      <Labels>м
+ж</Labels>
+      <ObjectId>24732</ObjectId>
+      <StateNumber>800</StateNumber>
+      <SubCategory>enum</SubCategory>
+      <SubKind>enum</SubKind>
+      <OwnerName>postgres</OwnerName>
+    </object-type>
+    <sequence id="264" parent="262" name="area_area_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>24675</ObjectId>
+      <StateNumber>774</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="265" parent="262" name="company_company_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24622</ObjectId>
       <StateNumber>749</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="264" parent="262" name="generalized_specialization_gen_spec_id_seq">
+    <sequence id="266" parent="262" name="generalized_specialization_gen_spec_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24599</ObjectId>
       <StateNumber>745</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="265" parent="262" name="narrow_specialization_refined_spec_id_seq">
+    <sequence id="267" parent="262" name="hhuser_user_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>24715</ObjectId>
+      <StateNumber>788</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="268" parent="262" name="narrow_specialization_refined_spec_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24608</ObjectId>
       <StateNumber>747</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="266" parent="262" name="response_response_id_seq">
+    <sequence id="269" parent="262" name="response_response_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24654</ObjectId>
       <StateNumber>753</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="267" parent="262" name="response_status_response_status_id_seq">
+    <sequence id="270" parent="262" name="response_status_response_status_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24580</ObjectId>
       <StateNumber>741</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="268" parent="262" name="vacancy_vacancy_id_seq">
+    <sequence id="271" parent="262" name="resume_resume_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>24693</ObjectId>
+      <StateNumber>786</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="272" parent="262" name="vacancy_vacancy_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24631</ObjectId>
       <StateNumber>751</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="269" parent="262" name="work_experience_work_experience_id_seq">
+    <sequence id="273" parent="262" name="work_experience_work_experience_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>24589</ObjectId>
       <StateNumber>743</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="270" parent="262" name="company">
+    <table id="274" parent="262" name="area">
+      <ObjectId>24676</ObjectId>
+      <StateNumber>782</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="275" parent="262" name="company">
       <ObjectId>24623</ObjectId>
       <StateNumber>751</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="271" parent="262" name="generalized_specialization">
+    <table id="276" parent="262" name="generalized_specialization">
       <ObjectId>24600</ObjectId>
       <StateNumber>747</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="272" parent="262" name="narrow_specialization">
+    <table id="277" parent="262" name="hhuser">
+      <ObjectId>24716</ObjectId>
+      <StateNumber>792</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="278" parent="262" name="narrow_specialization">
       <ObjectId>24609</ObjectId>
       <StateNumber>747</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="273" parent="262" name="response">
+    <table id="279" parent="262" name="response">
       <ObjectId>24655</ObjectId>
       <StateNumber>753</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="274" parent="262" name="response_status">
+    <table id="280" parent="262" name="response_status">
       <ObjectId>24581</ObjectId>
       <StateNumber>753</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="275" parent="262" name="vacancy">
-      <ObjectId>24632</ObjectId>
-      <StateNumber>751</StateNumber>
+    <table id="281" parent="262" name="resume">
+      <ObjectId>24694</ObjectId>
+      <StateNumber>802</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="276" parent="262" name="work_experience">
+    <table id="282" parent="262" name="vacancy">
+      <ObjectId>24632</ObjectId>
+      <StateNumber>782</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="283" parent="262" name="work_experience">
       <ObjectId>24590</ObjectId>
       <StateNumber>751</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="277" parent="270" name="company_id">
+    <column id="284" parent="274" name="area_id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;area_area_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>774</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="285" parent="274" name="area">
+      <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;Moscow&apos;::text</DefaultExpression>
+      <Position>2</Position>
+      <StateNumber>774</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="286" parent="274" name="area_pkey">
+      <ColNames>area_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24683</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>774</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="287" parent="274" name="area_pkey">
+      <ColNames>area_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24684</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>774</StateNumber>
+      <UnderlyingIndexId>24683</UnderlyingIndexId>
+    </key>
+    <column id="288" parent="275" name="company_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;company_company_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4928,26 +5008,26 @@ sequence|table|24654|24655|1
       <StateNumber>749</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="278" parent="270" name="company_name">
+    <column id="289" parent="275" name="company_name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>749</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="279" parent="270" name="rating">
+    <column id="290" parent="275" name="rating">
       <DataType>smallint|0s</DataType>
       <Position>3</Position>
       <StateNumber>749</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="280" parent="270" name="web_page">
+    <column id="291" parent="275" name="web_page">
       <DataType>text|0s</DataType>
       <Position>4</Position>
       <StateNumber>749</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="281" parent="270" name="company_pkey">
+    <index id="292" parent="275" name="company_pkey">
       <ColNames>company_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24629</ObjectId>
@@ -4956,7 +5036,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="282" parent="270" name="company_pkey">
+    <key id="293" parent="275" name="company_pkey">
       <ColNames>company_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24630</ObjectId>
@@ -4964,7 +5044,7 @@ sequence|table|24654|24655|1
       <StateNumber>749</StateNumber>
       <UnderlyingIndexId>24629</UnderlyingIndexId>
     </key>
-    <column id="283" parent="271" name="gen_spec_id">
+    <column id="294" parent="276" name="gen_spec_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;generalized_specialization_gen_spec_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4972,13 +5052,13 @@ sequence|table|24654|24655|1
       <StateNumber>745</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="284" parent="271" name="spec_name">
+    <column id="295" parent="276" name="spec_name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
       <StateNumber>745</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="285" parent="271" name="generalized_specialization_pkey">
+    <index id="296" parent="276" name="generalized_specialization_pkey">
       <ColNames>gen_spec_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24606</ObjectId>
@@ -4987,7 +5067,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="286" parent="271" name="generalized_specialization_pkey">
+    <key id="297" parent="276" name="generalized_specialization_pkey">
       <ColNames>gen_spec_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24607</ObjectId>
@@ -4995,7 +5075,39 @@ sequence|table|24654|24655|1
       <StateNumber>745</StateNumber>
       <UnderlyingIndexId>24606</UnderlyingIndexId>
     </key>
-    <column id="287" parent="272" name="refined_spec_id">
+    <column id="298" parent="277" name="user_id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;hhuser_user_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>788</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="299" parent="277" name="user_name">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>788</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="300" parent="277" name="hhuser_pkey">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24722</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>788</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="301" parent="277" name="hhuser_pkey">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24723</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>788</StateNumber>
+      <UnderlyingIndexId>24722</UnderlyingIndexId>
+    </key>
+    <column id="302" parent="278" name="refined_spec_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;narrow_specialization_refined_spec_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5003,19 +5115,19 @@ sequence|table|24654|24655|1
       <StateNumber>747</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="288" parent="272" name="spec_name">
+    <column id="303" parent="278" name="spec_name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
       <StateNumber>747</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="289" parent="272" name="gen_spec_id">
+    <column id="304" parent="278" name="gen_spec_id">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>747</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="290" parent="272" name="narrow_specialization_gen_spec_id_fkey">
+    <foreign-key id="305" parent="278" name="narrow_specialization_gen_spec_id_fkey">
       <ColNames>gen_spec_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24617</ObjectId>
@@ -5027,7 +5139,7 @@ sequence|table|24654|24655|1
       <RefTableName>generalized_specialization</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="291" parent="272" name="narrow_specialization_pkey">
+    <index id="306" parent="278" name="narrow_specialization_pkey">
       <ColNames>refined_spec_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24615</ObjectId>
@@ -5036,7 +5148,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="292" parent="272" name="narrow_specialization_pkey">
+    <key id="307" parent="278" name="narrow_specialization_pkey">
       <ColNames>refined_spec_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24616</ObjectId>
@@ -5044,7 +5156,7 @@ sequence|table|24654|24655|1
       <StateNumber>747</StateNumber>
       <UnderlyingIndexId>24615</UnderlyingIndexId>
     </key>
-    <column id="293" parent="273" name="response_id">
+    <column id="308" parent="279" name="response_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;response_response_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5052,19 +5164,19 @@ sequence|table|24654|24655|1
       <StateNumber>753</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="294" parent="273" name="status_id">
+    <column id="309" parent="279" name="status_id">
       <DataType>integer|0s</DataType>
       <Position>2</Position>
       <StateNumber>753</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="295" parent="273" name="vacancy_id">
+    <column id="310" parent="279" name="vacancy_id">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>753</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="296" parent="273" name="date_response">
+    <column id="311" parent="279" name="date_response">
       <DataType>date|0s</DataType>
       <DefaultExpression>now()</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5072,7 +5184,7 @@ sequence|table|24654|24655|1
       <StateNumber>753</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <foreign-key id="297" parent="273" name="response_status_id_fkey">
+    <foreign-key id="312" parent="279" name="response_status_id_fkey">
       <ColNames>status_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24662</ObjectId>
@@ -5084,7 +5196,7 @@ sequence|table|24654|24655|1
       <RefTableName>response_status</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="298" parent="273" name="response_vacancy_id_fkey">
+    <foreign-key id="313" parent="279" name="response_vacancy_id_fkey">
       <ColNames>vacancy_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24667</ObjectId>
@@ -5096,7 +5208,7 @@ sequence|table|24654|24655|1
       <RefTableName>vacancy</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="299" parent="273" name="response_pkey">
+    <index id="314" parent="279" name="response_pkey">
       <ColNames>response_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24660</ObjectId>
@@ -5105,7 +5217,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="300" parent="273" name="response_pkey">
+    <key id="315" parent="279" name="response_pkey">
       <ColNames>response_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24661</ObjectId>
@@ -5113,7 +5225,7 @@ sequence|table|24654|24655|1
       <StateNumber>753</StateNumber>
       <UnderlyingIndexId>24660</UnderlyingIndexId>
     </key>
-    <column id="301" parent="274" name="response_status_id">
+    <column id="316" parent="280" name="response_status_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;response_status_response_status_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5121,14 +5233,14 @@ sequence|table|24654|24655|1
       <StateNumber>741</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="302" parent="274" name="status">
+    <column id="317" parent="280" name="status">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>741</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="303" parent="274" name="response_status_pkey">
+    <index id="318" parent="280" name="response_status_pkey">
       <ColNames>response_status_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24587</ObjectId>
@@ -5137,7 +5249,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="304" parent="274" name="response_status_pkey">
+    <key id="319" parent="280" name="response_status_pkey">
       <ColNames>response_status_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24588</ObjectId>
@@ -5145,7 +5257,153 @@ sequence|table|24654|24655|1
       <StateNumber>741</StateNumber>
       <UnderlyingIndexId>24587</UnderlyingIndexId>
     </key>
-    <column id="305" parent="275" name="vacancy_id">
+    <check id="320" parent="281" name="resume_sex_check">
+      <ColNames>sex</ColNames>
+      <ObjectId>24700</ObjectId>
+      <Predicate>sex = ANY (ARRAY[&apos;м&apos;::bpchar, &apos;ж&apos;::bpchar])</Predicate>
+      <StateNumber>786</StateNumber>
+    </check>
+    <column id="321" parent="281" name="resume_id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;resume_resume_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="322" parent="281" name="first_name">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="323" parent="281" name="last_name">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="324" parent="281" name="phone_numb">
+      <DataType>varchar(12)|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>802</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="325" parent="281" name="email">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="326" parent="281" name="area_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="327" parent="281" name="title_position">
+      <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;джавист&apos;::text</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="328" parent="281" name="narrow_spec_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="329" parent="281" name="sex">
+      <DataType>char|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="330" parent="281" name="birthday">
+      <DataType>date|0s</DataType>
+      <DefaultExpression>now()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="331" parent="281" name="active">
+      <DataType>boolean|0s</DataType>
+      <DefaultExpression>true</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+      <StateNumber>802</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="332" parent="281" name="user_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+      <StateNumber>792</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="333" parent="281" name="resume_area_id_fkey">
+      <ColNames>area_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24705</ObjectId>
+      <RefColNames>area_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>area_pkey</RefKeyName>
+      <StateNumber>786</StateNumber>
+      <RefTableId>24676</RefTableId>
+      <RefTableName>area</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="334" parent="281" name="resume_narrow_spec_id_fkey">
+      <ColNames>narrow_spec_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24710</ObjectId>
+      <RefColNames>refined_spec_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>narrow_specialization_pkey</RefKeyName>
+      <StateNumber>786</StateNumber>
+      <RefTableId>24609</RefTableId>
+      <RefTableName>narrow_specialization</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="335" parent="281" name="resume_user_id_fkey">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24725</ObjectId>
+      <RefColNames>user_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>hhuser_pkey</RefKeyName>
+      <StateNumber>792</StateNumber>
+      <RefTableId>24716</RefTableId>
+      <RefTableName>hhuser</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="336" parent="281" name="resume_pkey">
+      <ColNames>resume_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24703</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>802</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="337" parent="281" name="resume_pkey">
+      <ColNames>resume_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24704</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>786</StateNumber>
+      <UnderlyingIndexId>24703</UnderlyingIndexId>
+    </key>
+    <column id="338" parent="282" name="vacancy_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;vacancy_vacancy_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5153,34 +5411,27 @@ sequence|table|24654|24655|1
       <StateNumber>751</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="306" parent="275" name="vacancy_name">
+    <column id="339" parent="282" name="vacancy_name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>751</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="307" parent="275" name="work_experience_id">
+    <column id="340" parent="282" name="work_experience_id">
       <DataType>smallint|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
       <StateNumber>751</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="308" parent="275" name="vacancy_description">
+    <column id="341" parent="282" name="vacancy_description">
       <DataType>text|0s</DataType>
       <Position>4</Position>
       <StateNumber>751</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="309" parent="275" name="address">
-      <DataType>text|0s</DataType>
-      <DefaultExpression>&apos;Moscow&apos;::text</DefaultExpression>
-      <Position>5</Position>
-      <StateNumber>751</StateNumber>
-      <TypeId>25</TypeId>
-    </column>
-    <column id="310" parent="275" name="date_publication">
+    <column id="342" parent="282" name="date_publication">
       <DataType>date|0s</DataType>
       <DefaultExpression>now()</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5188,26 +5439,26 @@ sequence|table|24654|24655|1
       <StateNumber>751</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="311" parent="275" name="company_id">
+    <column id="343" parent="282" name="company_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>751</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="312" parent="275" name="compensation_from">
+    <column id="344" parent="282" name="compensation_from">
       <DataType>integer|0s</DataType>
       <Position>8</Position>
       <StateNumber>751</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="313" parent="275" name="compensation_to">
+    <column id="345" parent="282" name="compensation_to">
       <DataType>integer|0s</DataType>
       <Position>9</Position>
       <StateNumber>751</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="314" parent="275" name="compensation_gross">
+    <column id="346" parent="282" name="compensation_gross">
       <DataType>boolean|0s</DataType>
       <DefaultExpression>false</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5215,7 +5466,14 @@ sequence|table|24654|24655|1
       <StateNumber>751</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <foreign-key id="315" parent="275" name="vacancy_work_experience_id_fkey">
+    <column id="347" parent="282" name="area_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+      <StateNumber>782</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="348" parent="282" name="vacancy_work_experience_id_fkey">
       <ColNames>work_experience_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24644</ObjectId>
@@ -5227,7 +5485,7 @@ sequence|table|24654|24655|1
       <RefTableName>work_experience</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="316" parent="275" name="vacancy_company_id_fkey">
+    <foreign-key id="349" parent="282" name="vacancy_company_id_fkey">
       <ColNames>company_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24649</ObjectId>
@@ -5239,7 +5497,19 @@ sequence|table|24654|24655|1
       <RefTableName>company</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="317" parent="275" name="vacancy_pkey">
+    <foreign-key id="350" parent="282" name="vacancy_area_id_fkey">
+      <ColNames>area_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24686</ObjectId>
+      <RefColNames>area_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>area_pkey</RefKeyName>
+      <StateNumber>782</StateNumber>
+      <RefTableId>24676</RefTableId>
+      <RefTableName>area</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="351" parent="282" name="vacancy_pkey">
       <ColNames>vacancy_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24642</ObjectId>
@@ -5248,7 +5518,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="318" parent="275" name="vacancy_pkey">
+    <key id="352" parent="282" name="vacancy_pkey">
       <ColNames>vacancy_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24643</ObjectId>
@@ -5256,7 +5526,7 @@ sequence|table|24654|24655|1
       <StateNumber>751</StateNumber>
       <UnderlyingIndexId>24642</UnderlyingIndexId>
     </key>
-    <column id="319" parent="276" name="work_experience_id">
+    <column id="353" parent="283" name="work_experience_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;work_experience_work_experience_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5264,7 +5534,7 @@ sequence|table|24654|24655|1
       <StateNumber>743</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="320" parent="276" name="years_experience">
+    <column id="354" parent="283" name="years_experience">
       <DataType>text|0s</DataType>
       <DefaultExpression>&apos;Без опыта&apos;::text</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5272,7 +5542,7 @@ sequence|table|24654|24655|1
       <StateNumber>743</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="321" parent="276" name="work_experience_pkey">
+    <index id="355" parent="283" name="work_experience_pkey">
       <ColNames>work_experience_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24597</ObjectId>
@@ -5281,7 +5551,7 @@ sequence|table|24654|24655|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="322" parent="276" name="work_experience_pkey">
+    <key id="356" parent="283" name="work_experience_pkey">
       <ColNames>work_experience_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24598</ObjectId>

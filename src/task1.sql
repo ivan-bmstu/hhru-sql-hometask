@@ -40,12 +40,12 @@ CREATE TABLE vacancy (
   vacancy_name text not null,
   work_experience_id smallint references work_experience(work_experience_id) default 0,
   vacancy_description text,
-  address text default 'Moscow',
   date_publication date not null default now(),
   company_id integer references company(company_id) not null,
   compensation_from integer,
   compensation_to integer,
-  compensation_gross boolean not null default false
+  compensation_gross boolean not null default false,
+  area_id integer not null references area(area_id)
 );
 
 CREATE TABLE response(
@@ -55,3 +55,27 @@ CREATE TABLE response(
   date_response date not null default now()
 );
 
+CREATE TABLE area(
+  area_id serial primary key,
+  area text default 'Moscow'
+);
+
+CREATE TABLE hhuser(
+  user_id serial primary key,
+  user_name text not null
+);
+
+CREATE TABLE resume(
+  resume_id serial primary key,
+  first_name text not null,
+  last_name text not null,
+  phone_numb char(12),
+  email text not null,
+  area_id integer not null references area(area_id),
+  title_position text not null default 'джавист',
+  narrow_spec_id integer not null references narrow_specialization(refined_spec_id),
+  sex char(1) not null CHECK ( sex IN ('м', 'ж') ),
+  birthday date not null default now(),
+  active boolean not null default true,
+  user_id integer not null references hhuser(user_id)
+);
