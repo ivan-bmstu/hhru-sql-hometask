@@ -19,7 +19,7 @@ FROM test_gen_spec;
 WITH test_area(id, area) AS (
   SELECT
     generate_series(1, 200) AS id,
-    md5(random()::text)    AS title
+    md5(random()::text)     AS title
 )
 INSERT
 INTO area(area_id, area)
@@ -28,23 +28,23 @@ FROM test_area;
 
 WITH test_narrow_spec(id, title, gen_id) AS (
   SELECT
-    generate_series(1, 300) AS id,
+    generate_series(1, 500) AS id,
     md5(random()::text)     AS title,
     random()*29 + 1         AS gen_id
 )
 INSERT
-INTO narrow_specialization(refined_spec_id, spec_name, gen_spec_id)
+INTO narrow_specialization(narrow_spec_id, spec_name, gen_spec_id)
 SELECT id, title, gen_id
 FROM test_narrow_spec;
 
 WITH test_hhuser(id, uname) AS (
   SELECT
-    generate_series(1, 1000) AS id,
-    md5(random()::text)     AS uname
+    generate_series(1, 100000)  AS id,
+    md5(random()::text)         AS uname
 )
 INSERT
-INTO hhuser(user_id, user_name)
-SELECT id, uname
+INTO hhuser(user_id, user_name, user_password)
+SELECT id, uname, uname || 'password'
 FROM test_hhuser;
 
 INSERT
@@ -56,9 +56,9 @@ VALUES ('Приглашение'),
 
 WITH test_company(id, title, rating, web_page) AS (
   SELECT
-    generate_series(1, 1000)       AS id,
+    generate_series(1, 80000)      AS id,
     md5(random()::text)            AS title,
-    random() * 50                    AS gen_id,
+    random() * 50                  AS rating,
     md5(random()::text)            AS web_page
 )
 INSERT
@@ -69,63 +69,68 @@ FROM test_company;
 WITH test_vacancy(
   id, sample_text, work_id,
   area_id, date_pub, comp_id,
-  salary) AS (
+  salary, narrow_spec_id) AS (
   SELECT
-    generate_series(1, 10000)                 AS id,
-    md5(random()::text)                       AS sample_text,
-    random() * 4 + 1                          AS work_id,
-    random() * 199 + 1                        AS area_id,
+    generate_series(1, 2000000)                    AS id,
+    md5(random()::text)                            AS sample_text,
+    random() * 4 + 1                               AS work_id,
+    random() * 199 + 1                             AS area_id,
     '2022-12-12'::date +
-     (random() * 365)::int                    AS date_pub,
-    random() * 999 + 1                        AS comp_id,
-    round((random() * 100000)::int, -3)       AS salary
+     (random() * 365)::int                         AS date_pub,
+    random() * 79999 + 1                           AS comp_id,
+    round((random() * 100000)::int, -3)            AS salary,
+    random() * 499 + 1                              AS narrow_spec_id,
+    (ARRAY[TRUE, FALSE])[floor(random() * 2) + 1]  AS active_status
 )
 INSERT
 INTO vacancy(
   vacancy_id, vacancy_name, work_experience_id,
   vacancy_description, area_id, date_publication,
   company_id, compensation_from, compensation_to,
-  compensation_gross)
+  narrow_spec_id, active)
 SELECT
   id, sample_text, work_id,
   sample_text || 'a', area_id, date_pub,
-  comp_id, salary, salary + 10000, true
+  comp_id, salary, salary + 10000,
+  narrow_spec_id, active_status
 FROM test_vacancy;
 
 WITH test_response(
   id, status_reference_id,
-  vacancy_id, date_response) AS (
+  vacancy_id, date_response,
+  user_id) AS (
   SELECT
     generate_series(1, 1000000)             AS id,
-    random() * 3 + 1                       AS status_reference_id,
-    random() * 9999 + 1                    AS vacancy_id,
+    random() * 3 + 1                        AS status_reference_id,
+    random() * 9999 + 1                     AS vacancy_id,
     '2022-12-12'::date +
-      (random() * 365)::int  AS date_pub
+      (random() * 365)::int                 AS date_response,
+    random() * 99999 + 1                    AS user_id
 )
 INSERT
-INTO response(response_id, status_id, vacancy_id, date_response)
+INTO response(response_id, status_id, vacancy_id, date_response, user_id)
 SELECT
   id, status_reference_id,
-  vacancy_id, date_response
+  vacancy_id, date_response, user_id
 FROM test_response;
-
-CREATE TYPE gender as enum('м','ж');
 
 WITH test_resume(
   id, text_sample,
   phone, area_id,
   narrow_spec_id, sex,
-  date_created, user_id) AS (
+  date_created, user_id,
+  active_status) AS (
   SELECT
-    generate_series(1, 100000)                               AS id,
+    generate_series(1, 1000000)                              AS id,
     md5(random()::text)                                      AS text_sample,
     '+7' || floor((random() * 99999999 + 1000000000))::text  AS phone,
     random() * 199 + 1                                       AS area_id,
-    random() * 299 + 1                                       AS narrow_spec_id,
+    random() * 499 + 1                                       AS narrow_spec_id,
     (ARRAY['м', 'ж'])[floor(random() * 2) + 1]               AS sex,
     '2022-12-12'::date +
     (random() * 365)::int                                    AS date_created,
-    random() * 999 + 1                                       AS user_id
+    random() * 99999 + 1                                     AS user_id,
+    (ARRAY[TRUE, FALSE])[floor(random() * 2) + 1]            AS active_status
 )
 INSERT
 INTO resume(
@@ -135,8 +140,8 @@ INTO resume(
   date_created, active, user_id
 )
 SELECT
-  id, text_sample, text_sample || 'a',
+  id, text_sample, text_sample || 'b',
   phone, text_sample || '@hh.com', area_id,
   text_sample || ' title', narrow_spec_id, sex,
-  date_created, true, user_id
+  date_created, active_status, user_id
 FROM test_resume;

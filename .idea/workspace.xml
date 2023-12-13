@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cd7d734-63ba-4e5f-9794-4989c56cb4d9" name="Changes" comment="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Ivan.xml" afterDir="false" />
+    <list default="true" id="4cd7d734-63ba-4e5f-9794-4989c56cb4d9" name="Changes" comment="fix task 5 (&gt;= replace by &gt;)">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task3.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task3.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,25 +34,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.sourceCode.General",
-    "sql.codeStylePanel.last.previewDialect": "PostgreSQL"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.General&quot;,
+    &quot;sql.codeStylePanel.last.previewDialect&quot;: &quot;PostgreSQL&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +65,8 @@
       <workItem from="1702284251548" duration="1550000" />
       <workItem from="1702299204699" duration="5810000" />
       <workItem from="1702380112632" duration="11908000" />
-      <workItem from="1702452489265" duration="9854000" />
+      <workItem from="1702452489265" duration="11374000" />
+      <workItem from="1702490286667" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1702300100226</created>
@@ -108,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702464875777</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix task 5 (&gt;= replace by &gt;)">
+      <created>1702465946566</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702465946566</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +141,8 @@
     <MESSAGE value="task 3" />
     <MESSAGE value="task 4" />
     <MESSAGE value="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)" />
+    <MESSAGE value="fix task 5 (&gt;= replace by &gt;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix task 5 (&gt;= replace by &gt;)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

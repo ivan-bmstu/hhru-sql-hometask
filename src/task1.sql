@@ -1,4 +1,4 @@
-CREATE DATABASE headhunter;
+-- CREATE DATABASE headhunter;
 
 /*
 первые две таблицы служебные, они будут содержать
@@ -6,76 +6,80 @@ CREATE DATABASE headhunter;
 */
 
 CREATE TABLE response_status(
-  response_status_id serial primary key,
-  status text not null
+  response_status_id SERIAL PRIMARY KEY,
+  status TEXT NOT NULL
 );
 
 CREATE TABLE work_experience(
-  work_experience_id serial primary key,
-  years_experience text not null default 'Без опыта'
+  work_experience_id SERIAL PRIMARY KEY,
+  years_experience TEXT NOT NULL DEFAULT 'Без опыта'
 );
 
 --для отображения специализаций без if условий разделим спец-ии на группу и подгруппу
 CREATE TABLE generalized_specialization(
-  gen_spec_id serial primary key,
-  spec_name text
+  gen_spec_id SERIAL PRIMARY KEY,
+  spec_name TEXT
 );
 
 CREATE TABLE narrow_specialization(
-  refined_spec_id serial primary key,
-  spec_name text,
-  gen_spec_id integer references generalized_specialization(gen_spec_id)
+  narrow_spec_id SERIAL PRIMARY KEY,
+  spec_name TEXT,
+  gen_spec_id INTEGER REFERENCES generalized_specialization(gen_spec_id)
 );
 
 CREATE TABLE company (
-  company_id serial primary key,
-  company_name text not null,
-  rating smallint,
-  web_page text
+  company_id SERIAL PRIMARY KEY,
+  company_name TEXT NOT NULL,
+  rating SMALLINT,
+  web_page TEXT
 );
 
 CREATE TABLE area(
-                   area_id serial primary key,
-                   area text default 'Moscow'
+  area_id SERIAL PRIMARY KEY,
+  area TEXT DEFAULT 'Moscow'
 );
 
 --адрес по-хорошему тоже как-то структурировать в отдельной таблице
 CREATE TABLE vacancy (
-  vacancy_id serial primary key,
-  vacancy_name text not null,
-  work_experience_id smallint references work_experience(work_experience_id) default 0,
-  vacancy_description text,
-  date_publication date not null default now(),
-  company_id integer references company(company_id) not null,
-  compensation_from integer,
-  compensation_to integer,
-  compensation_gross boolean not null default false,
-  area_id integer not null references area(area_id)
-);
-
-CREATE TABLE response(
-  response_id serial primary key,
-  status_id integer references response_status(response_status_id),
-  vacancy_id integer references vacancy(vacancy_id),
-  date_response date not null default now()
+  vacancy_id SERIAL PRIMARY KEY,
+  vacancy_name TEXT NOT NULL,
+  work_experience_id SMALLINT REFERENCES work_experience(work_experience_id) default 0,
+  vacancy_description TEXT,
+  date_publication DATE NOT NULL DEFAULT now(),
+  company_id INTEGER REFERENCES company(company_id) NOT NULL,
+  compensation_from INTEGER,
+  compensation_to INTEGER,
+  narrow_spec_id INTEGER REFERENCES narrow_specialization(narrow_spec_id),
+  area_id INTEGER NOT NULL REFERENCES area(area_id),
+  active BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 CREATE TABLE hhuser(
-  user_id serial primary key,
-  user_name text not null
+                     user_id SERIAL PRIMARY KEY,
+                     user_name TEXT NOT NULL,
+                     full_name TEXT,
+                     user_password TEXT NOT NULL CHECK ( user_password NOT IN ('12345', 'qwerty', '12345qwerty', 'QWERTY') )
+);
+
+CREATE TABLE response(
+  response_id SERIAL PRIMARY KEY,
+  status_id INTEGER REFERENCES response_status(response_status_id),
+  vacancy_id INTEGER REFERENCES vacancy(vacancy_id),
+  user_id INTEGER REFERENCES hhuser(user_id) NOT NULL,
+  date_response DATE NOT NULL DEFAULT now()
 );
 
 CREATE TABLE resume(
-  resume_id serial primary key,
-  first_name text not null,
-  last_name text not null,
-  phone_numb char(12),
-  email text not null,
-  area_id integer not null references area(area_id),
-  title_position text not null default 'джавист',
-  narrow_spec_id integer not null references narrow_specialization(refined_spec_id),
-  sex char(1) not null CHECK ( sex IN ('м', 'ж') ),
-  date_created date not null default now(),
-  active boolean not null default true,
-  user_id integer not null references hhuser(user_id)
+  resume_id SERIAL PRIMARY KEY,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  phone_numb CHAR(12),
+  email TEXT NOT NULL,
+  area_id INTEGER NOT NULL REFERENCES area(area_id),
+  title_position TEXT NOT NULL DEFAULT 'джавист',
+  narrow_spec_id INTEGER NOT NULL REFERENCES narrow_specialization(narrow_spec_id),
+  sex CHAR(1) NOT NULL CHECK ( sex IN ('м', 'ж') ),
+  date_created DATE NOT NULL DEFAULT now(),
+  active BOOLEAN NOT NULL DEFAULT TRUE,
+  user_id INTEGER NOT NULL REFERENCES hhuser(user_id)
 );
