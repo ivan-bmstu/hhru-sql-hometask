@@ -101,7 +101,7 @@ WITH test_response(
     random() * 9999 + 1                    AS vacancy_id,
     '2022-12-12'::date +
       (random() * 365)::int  AS date_pub
-  )
+)
 INSERT
 INTO response(response_id, status_id, vacancy_id, date_response)
 SELECT
