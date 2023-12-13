@@ -115,7 +115,7 @@ WITH test_resume(
   id, text_sample,
   phone, area_id,
   narrow_spec_id, sex,
-  birthday, user_id) AS (
+  date_created, user_id) AS (
   SELECT
     generate_series(1, 100000)                               AS id,
     md5(random()::text)                                      AS text_sample,
@@ -123,8 +123,8 @@ WITH test_resume(
     random() * 199 + 1                                       AS area_id,
     random() * 299 + 1                                       AS narrow_spec_id,
     (ARRAY['м', 'ж'])[floor(random() * 2) + 1]               AS sex,
-    '1950-01-01'::date +
-    (random() * 365 * 60)::int                               AS birthday,
+    '2022-12-12'::date +
+    (random() * 365)::int                               AS date_created,
     random() * 999 + 1                                       AS user_id
 )
 INSERT
@@ -132,11 +132,11 @@ INTO resume(
   resume_id, first_name, last_name,
   phone_numb, email, area_id,
   title_position, narrow_spec_id, sex,
-  birthday, active, user_id
+  date_created, active, user_id
 )
 SELECT
   id, text_sample, text_sample || 'a',
   phone, text_sample || '@hh.com', area_id,
   text_sample || ' title', narrow_spec_id, sex,
-  birthday, true, user_id
+  date_created, true, user_id
 FROM test_resume;

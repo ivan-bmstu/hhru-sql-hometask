@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.39">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>803</IntrospectionStateNumber>
+      <IntrospectionStateNumber>812</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
       <StartupTime>1702452450</StartupTime>
       <TimeZones>true ACDT
@@ -1400,7 +1400,7 @@ false posixrules
 13209||10|C|G
 13209||-9223372036854775808|U|G
 13209||10|U|G</Grants>
-      <IntrospectionStateNumber>803</IntrospectionStateNumber>
+      <IntrospectionStateNumber>812</IntrospectionStateNumber>
       <ObjectId>16388</ObjectId>
       <Relations>sequence|table|24580|24581|1
 sequence|table|24693|24694|1
@@ -4834,7 +4834,7 @@ sequence|table|24715|24716|1
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>803</IntrospectionStateNumber>
+      <IntrospectionStateNumber>812</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4952,7 +4952,7 @@ sequence|table|24715|24716|1
     </table>
     <table id="281" parent="262" name="resume">
       <ObjectId>24694</ObjectId>
-      <StateNumber>802</StateNumber>
+      <StateNumber>811</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -5327,15 +5327,7 @@ sequence|table|24715|24716|1
       <StateNumber>786</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="330" parent="281" name="birthday">
-      <DataType>date|0s</DataType>
-      <DefaultExpression>now()</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>10</Position>
-      <StateNumber>786</StateNumber>
-      <TypeId>1082</TypeId>
-    </column>
-    <column id="331" parent="281" name="active">
+    <column id="330" parent="281" name="active">
       <DataType>boolean|0s</DataType>
       <DefaultExpression>true</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5343,12 +5335,20 @@ sequence|table|24715|24716|1
       <StateNumber>802</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="332" parent="281" name="user_id">
+    <column id="331" parent="281" name="user_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>12</Position>
       <StateNumber>792</StateNumber>
       <TypeId>23</TypeId>
+    </column>
+    <column id="332" parent="281" name="date_created">
+      <DataType>date|0s</DataType>
+      <DefaultExpression>now()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+      <StateNumber>811</StateNumber>
+      <TypeId>1082</TypeId>
     </column>
     <foreign-key id="333" parent="281" name="resume_area_id_fkey">
       <ColNames>area_id</ColNames>
