@@ -5,4 +5,4 @@ WHERE
   response.date_response >= vacancy.date_publication
   AND response.date_response <= vacancy.date_publication + interval '1 week'
 GROUP BY vacancy.vacancy_id
-HAVING count(response.response_id) >= 5;
+HAVING count(response.response_id) > 5;

@@ -34,6 +34,11 @@ CREATE TABLE company (
   web_page text
 );
 
+CREATE TABLE area(
+                   area_id serial primary key,
+                   area text default 'Moscow'
+);
+
 --адрес по-хорошему тоже как-то структурировать в отдельной таблице
 CREATE TABLE vacancy (
   vacancy_id serial primary key,
@@ -55,11 +60,6 @@ CREATE TABLE response(
   date_response date not null default now()
 );
 
-CREATE TABLE area(
-  area_id serial primary key,
-  area text default 'Moscow'
-);
-
 CREATE TABLE hhuser(
   user_id serial primary key,
   user_name text not null
@@ -75,7 +75,7 @@ CREATE TABLE resume(
   title_position text not null default 'джавист',
   narrow_spec_id integer not null references narrow_specialization(refined_spec_id),
   sex char(1) not null CHECK ( sex IN ('м', 'ж') ),
-  birthday date not null default now(),
+  date_created date not null default now(),
   active boolean not null default true,
   user_id integer not null references hhuser(user_id)
 );

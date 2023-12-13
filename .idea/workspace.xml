@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cd7d734-63ba-4e5f-9794-4989c56cb4d9" name="Changes" comment="task 4">
-      <change afterPath="$PROJECT_DIR$/src/task5.sql" afterDir="false" />
+    <list default="true" id="4cd7d734-63ba-4e5f-9794-4989c56cb4d9" name="Changes" comment="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Ivan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task3.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task3.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +64,7 @@
       <workItem from="1702284251548" duration="1550000" />
       <workItem from="1702299204699" duration="5810000" />
       <workItem from="1702380112632" duration="11908000" />
-      <workItem from="1702452489265" duration="8568000" />
+      <workItem from="1702452489265" duration="9854000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1702300100226</created>
@@ -96,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702463576111</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)">
+      <created>1702464875777</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702464875777</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +131,8 @@
     <MESSAGE value="fix task 1 and resolve task 2" />
     <MESSAGE value="task 3" />
     <MESSAGE value="task 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 4" />
+    <MESSAGE value="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

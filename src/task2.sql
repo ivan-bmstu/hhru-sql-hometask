@@ -124,7 +124,7 @@ WITH test_resume(
     random() * 299 + 1                                       AS narrow_spec_id,
     (ARRAY['м', 'ж'])[floor(random() * 2) + 1]               AS sex,
     '2022-12-12'::date +
-    (random() * 365)::int                               AS date_created,
+    (random() * 365)::int                                    AS date_created,
     random() * 999 + 1                                       AS user_id
 )
 INSERT
