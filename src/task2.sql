@@ -96,7 +96,7 @@ WITH test_response(
   id, status_reference_id,
   vacancy_id, date_response) AS (
   SELECT
-    generate_series(1, 20000)             AS id,
+    generate_series(1, 1000000)             AS id,
     random() * 3 + 1                       AS status_reference_id,
     random() * 9999 + 1                    AS vacancy_id,
     '2022-12-12'::date +
