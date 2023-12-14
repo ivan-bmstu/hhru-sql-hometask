@@ -15,6 +15,9 @@
               <node kind="schema" qname="@" />
             </node>
             <node kind="database" qname="postgres" />
+            <node kind="database" qname="headhunter">
+              <node kind="schema" qname="public" />
+            </node>
           </node>
         </introspection-scope>
       </schema-mapping>

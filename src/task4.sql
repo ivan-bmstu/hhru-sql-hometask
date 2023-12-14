@@ -1,45 +1,34 @@
-WITH vacancy_by_month(
+/*
+запрос для получения месяца с наибольшим количеством вакансий и месяца с наибольшим количеством резюме
+*/
+
+WITH vacancy_by_month_year(
   vacancy_month_count,
-  vacancy_month_publicated
+  vacancy_publicated
   ) AS (
   SELECT
-    count(vacancy_id) AS vacancy_month_count,
-    EXTRACT(MONTH FROM date_publication) AS vacancy_month_publicated
+    count(vacancy_id)                      AS vacancy_month_count,
+    date_trunc('month', date_publication)  AS vacancy_date_publicated
   FROM vacancy
-  GROUP BY vacancy_month_publicated
+  GROUP BY vacancy_date_publicated
   ORDER BY vacancy_month_count DESC
 ),
-resume_by_month(
+resume_by_month_year(
   resume_month_count,
-  resume_month_publicated
+  resume_publicated
   ) AS (
   SELECT
-    count(resume_id) AS resume_month_count,
-    EXTRACT(MONTH FROM date_created) AS resume_month_publicated
+    count(resume_id)                    AS resume_month_count,
+    date_trunc('month', date_created)   AS resume_date_publicated
   FROM resume
-  GROUP BY resume_month_publicated
+  GROUP BY resume_date_publicated
   ORDER BY resume_month_count DESC
 )
 SELECT
-  vacancy_by_month.vacancy_month_count,
-  vacancy_by_month.vacancy_month_publicated,
-  resume_by_month.resume_month_count,
-  resume_by_month.resume_month_publicated
-FROM vacancy_by_month, resume_by_month
+  to_char(vacancy_by_month_year.vacancy_publicated, 'yyyy-mm')   AS month_publication_of_max_vacancy,
+  vacancy_by_month_year.vacancy_month_count                      AS vacancy_count,
+  to_char(resume_by_month_year.resume_publicated, 'yyyy-mm')     AS month_publication_of_max_resume,
+  resume_by_month_year.resume_month_count                        AS resume_count
+FROM vacancy_by_month_year, resume_by_month_year
 LIMIT 1;
 --p.s. я бы сделал два разных запроса
--- SELECT
---   count(vacancy_id) AS vacancy_month_count,
---   EXTRACT(MONTH FROM date_publication) AS vacancy_month_publicated
--- FROM vacancy
--- GROUP BY vacancy_month_publicated
--- ORDER BY vacancy_month_count DESC
--- LIMIT 1;
---
--- SELECT
---   count(resume_id) AS resume_month_count,
---   EXTRACT(MONTH FROM date_created) AS resume_month_publicated
--- FROM resume
--- GROUP BY resume_month_publicated
--- ORDER BY resume_month_count DESC
--- LIMIT 1;

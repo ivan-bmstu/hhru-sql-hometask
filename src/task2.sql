@@ -1,10 +1,13 @@
+--заполнение БД тестовыми данными
+
 INSERT
 INTO work_experience(years_experience)
-VALUES ('Не имеет значения'),
-       ('Нет опыта'),
-       ('От 1 года до 3 лет'),
-       ('От 3 до 6 лет'),
-       ('Более 6 лет');
+VALUES
+  ('Не имеет значения'),
+  ('Нет опыта'),
+  ('От 1 года до 3 лет'),
+  ('От 3 до 6 лет'),
+  ('Более 6 лет');
 
 WITH test_gen_spec(id, title) AS (
   SELECT
@@ -49,10 +52,11 @@ FROM test_hhuser;
 
 INSERT
 INTO response_status(status)
-VALUES ('Приглашение'),
-       ('Резюме просмотрено'),
-       ('Компания заблокирована'),
-       ('Резюме не просмотрено');
+VALUES
+  ('Приглашение'),
+  ('Резюме просмотрено'),
+  ('Компания заблокирована'),
+  ('Резюме не просмотрено');
 
 WITH test_company(id, title, rating, web_page) AS (
   SELECT
@@ -69,30 +73,33 @@ FROM test_company;
 WITH test_vacancy(
   id, sample_text, work_id,
   area_id, date_pub, comp_id,
-  salary, narrow_spec_id) AS (
+  salary, narrow_spec_id, gen_spec_id,
+  active_status, comp_gross) AS (
   SELECT
     generate_series(1, 2000000)                    AS id,
     md5(random()::text)                            AS sample_text,
     random() * 4 + 1                               AS work_id,
     random() * 199 + 1                             AS area_id,
-    '2022-12-12'::date +
-     (random() * 365)::int                         AS date_pub,
+    '2020-12-12'::date +
+     (random() * 365 * 3)::int                     AS date_pub,
     random() * 79999 + 1                           AS comp_id,
     round((random() * 100000)::int, -3)            AS salary,
-    random() * 499 + 1                              AS narrow_spec_id,
-    (ARRAY[TRUE, FALSE])[floor(random() * 2) + 1]  AS active_status
+    random() * 499 + 1                             AS narrow_spec_id,
+    random() * 29 + 1                              AS gen_spec_id,
+    (ARRAY[TRUE, FALSE])[floor(random() * 2) + 1]  AS active_status,
+    (ARRAY[TRUE, FALSE])[floor(random() * 2) + 1]  AS comp_gross
 )
 INSERT
 INTO vacancy(
   vacancy_id, vacancy_name, work_experience_id,
   vacancy_description, area_id, date_publication,
   company_id, compensation_from, compensation_to,
-  narrow_spec_id, active)
+  narrow_spec_id, general_spec_id, active, gross)
 SELECT
   id, sample_text, work_id,
   sample_text || 'a', area_id, date_pub,
   comp_id, salary, salary + 10000,
-  narrow_spec_id, active_status
+  narrow_spec_id, gen_spec_id, active_status, comp_gross
 FROM test_vacancy;
 
 WITH test_response(

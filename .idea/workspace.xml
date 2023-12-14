@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cd7d734-63ba-4e5f-9794-4989c56cb4d9" name="Changes" comment="fix task 5 (&gt;= replace by &gt;)">
+    <list default="true" id="4cd7d734-63ba-4e5f-9794-4989c56cb4d9" name="Changes" comment="final commit">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f15df1b3-79a9-44c7-85fa-c5fdee45d009/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task3.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task3.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task4.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task5.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task5.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task6.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/task6.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,8 @@
       <workItem from="1702299204699" duration="5810000" />
       <workItem from="1702380112632" duration="11908000" />
       <workItem from="1702452489265" duration="11374000" />
-      <workItem from="1702490286667" duration="3665000" />
+      <workItem from="1702490286667" duration="13574000" />
+      <workItem from="1702539024429" duration="10660000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1702300100226</created>
@@ -117,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702465946566</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix db schema, set BIG DATA samples">
+      <created>1702497113552</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702497113552</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +149,9 @@
     <MESSAGE value="task 4" />
     <MESSAGE value="task 5 and fix task2 (add 1,000,000 not 100,000 resumes)" />
     <MESSAGE value="fix task 5 (&gt;= replace by &gt;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix task 5 (&gt;= replace by &gt;)" />
+    <MESSAGE value="fix db schema, set BIG DATA samples" />
+    <MESSAGE value="final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,5 +1,9 @@
+--спроектируем БД hh.ru
 -- CREATE DATABASE headhunter;
+-- \c headhunter;
+--^^^^ не совсем понимаю как из скрипта переключить БД
 
+-------------------------------
 /*
 первые две таблицы служебные, они будут содержать
 типичные представления для других таблиц
@@ -50,15 +54,22 @@ CREATE TABLE vacancy (
   compensation_from INTEGER,
   compensation_to INTEGER,
   narrow_spec_id INTEGER REFERENCES narrow_specialization(narrow_spec_id),
+  general_spec_id INTEGER REFERENCES generalized_specialization(gen_spec_id),
   area_id INTEGER NOT NULL REFERENCES area(area_id),
-  active BOOLEAN NOT NULL DEFAULT TRUE
+  active BOOLEAN NOT NULL DEFAULT TRUE,
+  gross BOOLEAN NOT NULL
 );
 
 CREATE TABLE hhuser(
-                     user_id SERIAL PRIMARY KEY,
-                     user_name TEXT NOT NULL,
-                     full_name TEXT,
-                     user_password TEXT NOT NULL CHECK ( user_password NOT IN ('12345', 'qwerty', '12345qwerty', 'QWERTY') )
+  user_id SERIAL PRIMARY KEY,
+  user_name TEXT NOT NULL,
+  full_name TEXT,
+  user_password TEXT NOT NULL CHECK ( user_password NOT IN (
+                                                            '12345',
+                                                            'qwerty',
+                                                            '12345qwerty',
+                                                            'QWERTY')
+  )
 );
 
 CREATE TABLE response(
